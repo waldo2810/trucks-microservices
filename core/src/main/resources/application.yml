@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: camiones
+  profiles:
+    active: local
+---
+spring:
+  profile: local
+  datasource:
+    url: jdbc:postgresql://localhost:5435/camiones
+    username: postgres
+    password: 1234
+    test-on-borrow: true
+    validation-query: SELECT 1 FROM dual
+  jpa:
+    show-sql: true
+    hibernate:
+      format-sql: true
+      ddl-auto: update
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: rabbit
+    password: 1234
